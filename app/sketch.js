@@ -13,7 +13,7 @@ function setup() {
 	// https://coolors.co/fb3640-20a39e-edae49-e0f2e9-ffe74c
 	colors = {
 		red: '#FB3640',
-		blue: '#20A39E',
+		blue: '#96EAE7',
 		orange: '#EDAE49',
 		white: '#E0F2E9',
 		yellow: '#FFE74C'
@@ -36,7 +36,7 @@ function setup() {
 
 function draw() {
 	// background
-	background(colors.white);
+	background(colors.blue);
 
 	// target
 	fill(target.color);
