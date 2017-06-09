@@ -1,3 +1,5 @@
+var colors;
+
 var magikarp;
 var target;
 
@@ -8,27 +10,37 @@ var gravity = 5;
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 
+	// https://coolors.co/fb3640-20a39e-edae49-e0f2e9-ffe74c
+	colors = {
+		red: '#FB3640',
+		blue: '#20A39E',
+		orange: '#EDAE49',
+		white: '#E0F2E9',
+		yellow: '#FFE74C'
+	}
+
 	target = {
 		x: windowWidth / 2,
 		y: 0,
 		radius: 50,
-		color: 'red'
+		color: colors.red
 	}
 
 	magikarp = {
 		x: windowWidth / 2,
 		y: windowHeight,
 		jumpHeight: 100,
-		color: 'orange'
+		color: colors.orange
 	}
 }
 
 function draw() {
 	// background
-	background(123);
+	background(colors.white);
 
 	// target
 	fill(target.color);
+	noStroke();
 	ellipse(target.x,target.y,target.radius,target.radius);
 
 
