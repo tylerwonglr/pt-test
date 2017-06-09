@@ -1,4 +1,4 @@
-var m;
+var magikarp;
 var target;
 
 var counter = 0;
@@ -15,7 +15,7 @@ function setup() {
 		color: 'red'
 	}
 
-	m = {
+	magikarp = {
 		x: windowWidth / 2,
 		y: windowHeight,
 		jumpHeight: 100,
@@ -33,24 +33,24 @@ function draw() {
 
 
 	// gravity
-	if (m.y <= windowHeight - gravity) {
-		m.y += gravity;
+	if (magikarp.y <= windowHeight - gravity) {
+		magikarp.y += gravity;
 	}
 
 	// magikarp
-	fill(m.color);
-	ellipse(m.x, m.y, 50, 50);
+	fill(magikarp.color);
+	ellipse(magikarp.x, magikarp.y, 50, 50);
 }
 
 function keyPressed() {
 	if (keyCode == 32) {
-		if (m.y >= m.jumpHeight) {
-			m.y -= m.jumpHeight;
+		if (magikarp.y >= magikarp.jumpHeight) {
+			magikarp.y -= magikarp.jumpHeight;
 		}
 
-		if (m.y <= target.y + target.radius) {
+		if (magikarp.y <= target.y + target.radius) {
 			counter++;
-			m.y = windowHeight;
+			magikarp.y = windowHeight;
 
 			alert(counter);
 		}
