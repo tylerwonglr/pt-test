@@ -32,7 +32,8 @@ function setup() {
 		x: windowWidth / 2,
 		y: windowHeight,
 		jumpHeight: 100,
-		color: colors.orange
+		color: colors.orange,
+		jump: jump
 	}
 }
 
@@ -57,23 +58,23 @@ function draw() {
 
 function keyPressed() {
 	if (keyCode == 32) {
-		magikarpJump();
+		magikarp.jump();
 	}
 }
 
 function mouseClicked() {
-	magikarpJump();
+	magikarp.jump();
 }
 
 // custom
-function magikarpJump() {
-	if (magikarp.y >= magikarp.jumpHeight) {
-		magikarp.y -= magikarp.jumpHeight;
+function jump() {
+	if (this.y >= this.jumpHeight) {
+		this.y -= this.jumpHeight;
 	}
 
-	if (magikarp.y <= target.y + target.radius) {
+	if (this.y <= target.y + target.radius) {
 		counter++;
-		magikarp.y = windowHeight;
+		this.y = windowHeight;
 
 		alert(counter);
 	}
