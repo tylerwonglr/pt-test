@@ -1,11 +1,13 @@
+// objects
 var colors;
-
 var magikarp;
 var target;
 
+// variables
 var counter = 0;
 
-var gravity = 5;
+// CONSTANTS
+var GRAVITY = 5;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -43,10 +45,9 @@ function draw() {
 	noStroke();
 	ellipse(target.x,target.y,target.radius,target.radius);
 
-
 	// gravity
-	if (magikarp.y <= windowHeight - gravity) {
-		magikarp.y += gravity;
+	if (magikarp.y <= windowHeight - GRAVITY) {
+		magikarp.y += GRAVITY;
 	}
 
 	// magikarp
