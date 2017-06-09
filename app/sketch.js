@@ -56,15 +56,24 @@ function draw() {
 
 function keyPressed() {
 	if (keyCode == 32) {
-		if (magikarp.y >= magikarp.jumpHeight) {
-			magikarp.y -= magikarp.jumpHeight;
-		}
+		magikarpJump();
+	}
+}
 
-		if (magikarp.y <= target.y + target.radius) {
-			counter++;
-			magikarp.y = windowHeight;
+function mouseClicked() {
+	magikarpJump();
+}
 
-			alert(counter);
-		}
+// custom
+function magikarpJump() {
+	if (magikarp.y >= magikarp.jumpHeight) {
+		magikarp.y -= magikarp.jumpHeight;
+	}
+
+	if (magikarp.y <= target.y + target.radius) {
+		counter++;
+		magikarp.y = windowHeight;
+
+		alert(counter);
 	}
 }
