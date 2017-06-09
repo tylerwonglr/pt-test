@@ -42,15 +42,17 @@ function draw() {
 	ellipse(m.x, m.y, 50, 50);
 }
 
-function mouseClicked() {
-	if (m.y >= m.jumpHeight) {
-		m.y -= m.jumpHeight;
-	}
+function keyPressed() {
+	if (keyCode == 32) {
+		if (m.y >= m.jumpHeight) {
+			m.y -= m.jumpHeight;
+		}
 
-	if (m.y <= target.y + target.radius) {
-		counter++;
-		m.y = windowHeight;
+		if (m.y <= target.y + target.radius) {
+			counter++;
+			m.y = windowHeight;
 
-		alert(counter);
+			alert(counter);
+		}
 	}
 }
